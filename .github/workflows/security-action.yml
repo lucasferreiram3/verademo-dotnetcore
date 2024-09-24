@@ -1,7 +1,7 @@
 name: security-action
 on:
   push:
-    branches: [veracode-actions]
+    branches: [csharp-wrapper]
     
 jobs:
   build:
