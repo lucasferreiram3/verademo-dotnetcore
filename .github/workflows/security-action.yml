@@ -56,6 +56,6 @@ jobs:
           VKEY: ${{ secrets.VERACODE_KEY }}
         run: |
           Invoke-WebRequest -Uri "https://tools.veracode.com/integrations/API-Wrappers/CSharp/bin/VeracodeCSharpAPI.zip" -OutFile "VeracodeCSharpAPI.zip"
-          Expand-Archive -Path "VeracodeCSharpAPI.zip" -DestinationPath "$(Build.ArtifactStagingDirectory)"
-          dir $(Build.ArtifactStagingDirectory)
+          Expand-Archive -Path "VeracodeCSharpAPI.zip" -DestinationPath .
+          dir
           .\VeracodeC#API.exe -vid $VID -vkey $VKEY -action uploadandscan -appname 'verademo-dotnetcore' -createprofile true -filepath 'verademodotnetcore.zip' -version ${{ github.run_id }}
