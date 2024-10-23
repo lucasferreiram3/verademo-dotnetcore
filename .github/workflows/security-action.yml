@@ -15,7 +15,10 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '3.1.x'
-    
+        
+      - name: PowerShell virtual environment
+        uses: Tyler887/PS-Runner@1.4.1
+            
       - name: Build the App
         working-directory: ./app/
         env: 
